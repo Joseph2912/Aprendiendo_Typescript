@@ -1,3 +1,39 @@
+//* Declaracion de variables con tipos  -------------------------------------------------
+
+let nombre: string;
+
+let numero: number;
+
+let Booleano: Boolean;
+
+let nulo: null;
+
+let Arreglo: number[] = [1, 2, 3, 4];
+
+let Fecha: Date = new Date();
+
+//* Interfaces con tipos -------------------------------------------------
+
+const Persona: {
+  nombre: string;
+  apellido: string;
+  ocupacion?: string;
+  edad: number;
+  direccion: { calle: string; pais: string; ciudad: string };
+} = {
+  nombre: "Tony",
+  apellido: "stark",
+  ocupacion: undefined,
+  edad: 28,
+  direccion: {
+    calle: "P sherman",
+    pais: "Maiami",
+    ciudad: "nose",
+  },
+};
+
+Persona.ocupacion = "CEO";
+
 //* Funciones genericas -------------------------------------------------
 
 const unaCosa = <T>(x: T, y: T) => {
