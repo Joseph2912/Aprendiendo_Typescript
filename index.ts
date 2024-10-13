@@ -94,6 +94,18 @@ class Manada implements IPerro {
   }
 }
 
+//* Declaración de funciones con tipos -------------------------------------------------
+
+const test = (valor: string | boolean | number): boolean => {
+  if (typeof valor === "string") {
+    return valor.length > 0;
+  }
+  if (typeof valor === "number") {
+    return valor > 0;
+  }
+  return valor;
+};
+
 //* Funciones genericas -------------------------------------------------
 
 const unaCosa = <T>(x: T, y: T) => {
