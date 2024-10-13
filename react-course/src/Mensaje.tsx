@@ -24,3 +24,15 @@ export const QueMensaje = ({ mensajeA, mensajeB }: mensajeProps) => {
   }
   return <h1 onClick={cambiarMensajeA}>{mensajeB}</h1>;
 };
+
+//* Renderizacion condicional
+
+export const QueMensaje2 = ({ mensajeA, mensajeB }: mensajeProps) => {
+  const [mostrarMensajeA, setMostraraMensajeA] = React.useState(false);
+
+  const cambiarMensajeA = () => setMostraraMensajeA((prev) => !prev);
+
+  return (
+    <h1 onClick={cambiarMensajeA}>{mostrarMensajeA ? mensajeA : mensajeB}</h1>
+  );
+};
