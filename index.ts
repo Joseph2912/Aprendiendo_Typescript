@@ -34,6 +34,66 @@ const Persona: {
 
 Persona.ocupacion = "CEO";
 
+//* Clases y Objetos -------------------------------------------------
+
+class Vaca {
+  nombre: string;
+  ID: number;
+
+  constructor(nombre: string, ID: number) {
+    this.nombre = nombre;
+    this.ID = ID;
+  }
+  Muuu(): void {
+    console.log(`Hola soy la vaca ${this.nombre} y mi ID es ${this.ID}`);
+  }
+}
+
+const laVacaQUe = new Vaca("Lola", 2146);
+
+laVacaQUe.Muuu();
+
+//* Herencia de clases -------------------------------------------------
+//! La clase Vaca buena esta heredando de la clase vaca de la seccion anterior
+
+class VacaBuena extends Vaca {
+  leche: string;
+
+  constructor(nombre: string, ID: number, leche: string) {
+    super(nombre, ID);
+    this.leche = leche;
+  }
+
+  BuenaVaca(): void {
+    console.log(`la vaca contenta da leche ${this.leche}`);
+  }
+}
+
+//* Implementación de interfaces -------------------------------------------------
+
+interface IPerro {
+  raza: string;
+  color: string;
+  ladrar(): void;
+}
+
+class Manada implements IPerro {
+  raza: string;
+  color: string;
+  tamaño: number;
+
+  constructor(raza: string, color: string, tamaño: number) {
+    this.raza = raza;
+    this.color = color;
+    this.tamaño = tamaño;
+  }
+  ladrar(): void {
+    console.log(
+      `El perro de raza ${this.raza} y tamaño ${this.tamaño} está ladrando.`
+    );
+  }
+}
+
 //* Funciones genericas -------------------------------------------------
 
 const unaCosa = <T>(x: T, y: T) => {
